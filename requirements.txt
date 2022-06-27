@@ -6,6 +6,7 @@ Flask-SQLAlchemy
 marshmallow~=3.15.0
 PyJWT~=2.3.0
 flask-swagger-ui
+psycopg2-binary
 
 # For test
 pytest~=7.1.2

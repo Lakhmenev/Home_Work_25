@@ -4,7 +4,6 @@ from project.config import DevelopmentConfig
 from project.dao.models import Genre
 from project.dao.models import Movie
 from project.dao.models import Director
-from project.dao.models import User
 from project.server import create_app
 from project.setup_db import db
 from project.utils import read_json

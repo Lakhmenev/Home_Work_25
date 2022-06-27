@@ -1,5 +1,5 @@
 from sqlalchemy.orm.scoping import scoped_session
-import project.config
+from project import config
 from project.dao.models import Genre
 
 
@@ -18,7 +18,7 @@ class GenreDAO:
 
         if page is not None:
             page_int = int(data_filter.get('page'))
-            genres = genres.paginate(page_int, project.config.BaseConfig.ITEMS_PER_PAGE, False)
+            genres = genres.paginate(page_int, config.BaseConfig.ITEMS_PER_PAGE, False)
 
             return genres.items
         else:

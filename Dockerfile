@@ -4,15 +4,9 @@ ENV HOME /code
 WORKDIR $HOME
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache -r requirements.txt
-COPY project .
-COPY tests .
-COPY app.py .
-COPY create_tables.py .
-COPY fixtures.json .
-COPY load_fixtures.py .
-COPY start_app.sh .
-#CMD flask run -h 0.0.0.0 -p:80
-
-EXPOSE 80
+COPY . .
+#CMD flask run -h 0.0.0.0 -p 80
+RUN export FLASK_APP='run.py'
+RUN export FLASK_ENV='development'
 
 CMD ["sh", "start_app.sh"]

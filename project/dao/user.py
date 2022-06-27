@@ -1,6 +1,6 @@
 from sqlalchemy.orm.scoping import scoped_session
 from project.dao.models import User
-import project.config
+from project import config
 
 
 class UserDAO:
@@ -21,7 +21,7 @@ class UserDAO:
 
         if page is not None:
             page_int = int(data_filter.get('page'))
-            users = users.paginate(page_int, project.config.BaseConfig.ITEMS_PER_PAGE, False)
+            users = users.paginate(page_int, config.BaseConfig.ITEMS_PER_PAGE, False)
 
             return users.items
         else:

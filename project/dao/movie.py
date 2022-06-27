@@ -1,5 +1,5 @@
 from sqlalchemy.orm.scoping import scoped_session
-import project.config
+from project import config
 from project.dao.models import Movie
 
 
@@ -38,7 +38,7 @@ class MovieDAO:
 
         if page is not None:
             page_int = int(data_filter.get('page'))
-            movies = movies.paginate(page_int, project.config.BaseConfig.ITEMS_PER_PAGE, False)
+            movies = movies.paginate(page_int, config.BaseConfig.ITEMS_PER_PAGE, False)
 
             return movies.items
         else:

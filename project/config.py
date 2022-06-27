@@ -1,7 +1,7 @@
 import os
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
-DATABASE_PATH = os.path.join(os.getcwd(), "project.db")
+DATABASE_PATH = os.path.join(os.getcwd(), "../project.db")
 
 
 class BaseConfig:
@@ -20,4 +20,5 @@ class TestingConfig(BaseConfig):
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_ECHO = True
-    SQLALCHEMY_DATABASE_URI = f'sqlite:///{DATABASE_PATH}'
+    # SQLALCHEMY_DATABASE_URI = f'sqlite:///{DATABASE_PATH}'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://db_user:db_password@db/db_name'

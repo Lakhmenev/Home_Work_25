@@ -1,3 +1,3 @@
-python create_tables.py
-python load_fixtures.py
-python app.py
+python3.10 create_tables.py
+python3.10 load_fixtures.py
+python3.10 app.py
