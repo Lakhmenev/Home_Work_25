@@ -41,3 +41,4 @@ jobs:
             cd test_app
             docker login -u ${{ secrets.DOCKER_NAME }} -p ${{ secrets.DOCKER_TOKEN }}
             docker-compose up -d
+
