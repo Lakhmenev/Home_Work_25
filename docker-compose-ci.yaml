@@ -2,7 +2,8 @@ version: '3.3'
 
 services:
   web:
-    image: dilan151/my_flask:$GITHUB_REF__NAME-$GITHUB_RUN_ID
+#    image: dilan151/my_flask
+    image: $DOCKER_NAME/my_flask:$GITHUB_REF__NAME-$GITHUB_RUN_ID
     ports:
       - '80:80'
     restart: always
@@ -10,12 +11,14 @@ services:
       - db
   db:
     image: postgres
+#    ports:
+#      - '5433:5332'
     environment:
       - POSTGRES_PASSWORD=$DB_PASSWORD
       - POSTGRES_USER=$DB_USER
       - POSTGRES_DB=$DB_NAME
-    ports:
-      - '5432:5432'
+#    ports:
+#      - '5432:5432'
     volumes:
       - pg_data:/var/lib/postgresql/data
 
