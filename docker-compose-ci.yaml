@@ -3,7 +3,7 @@ version: '3.3'
 services:
   web:
 #    image: dilan151/my_flask
-    image: $DOCKER_NAME/my_flask:$GITHUB_REF__NAME-$GITHUB_RUN_ID
+    image: dilan151/my_flask:$GITHUB_REF__NAME-$GITHUB_RUN_ID
     ports:
       - '80:80'
     restart: always
