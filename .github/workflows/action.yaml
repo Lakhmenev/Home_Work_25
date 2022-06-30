@@ -43,6 +43,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd test_app
-            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
-#            docker login -u ${{ secrets.DOCKER_NAME }} -p ${{ secrets.DOCKER_TOKEN }}
-#            docker-compose -d
+            docker login -u ${{ secrets.DOCKER_NAME }} -p ${{ secrets.DOCKER_TOKEN }}
+            docker-compose -d
+#            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
