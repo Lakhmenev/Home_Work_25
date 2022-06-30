@@ -43,4 +43,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd test_app
-            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
+            echo ${{ secrets.DOCKER_PASSWORD }} | sudo -S docker-compose up -d
